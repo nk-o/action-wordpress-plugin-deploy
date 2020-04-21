@@ -64,7 +64,7 @@ if [[ -e "$GITHUB_WORKSPACE/.distignore" ]]; then
     echo "ℹ︎ Using .distignore"
     rsync -rc --exclude-from="$GITHUB_WORKSPACE/.distignore" "$GITHUB_WORKSPACE/$SOURCE_DIR" trunk/ --delete --delete-excluded
 else
-    rsync -rc --exclude={"$ASSETS_DIR",".gitattributes",".gitignore", ".github"} "$GITHUB_WORKSPACE/$SOURCE_DIR" trunk/ --delete --delete-excluded
+    rsync -rc "$GITHUB_WORKSPACE/$SOURCE_DIR" trunk/ --delete --delete-excluded
 fi
 
 # Copy dotorg assets to /assets
