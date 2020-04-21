@@ -52,10 +52,10 @@ SVN_DIR="/github/svn-${SLUG}"
 # Checkout just trunk and assets for efficiency
 # Tagging will be handled on the SVN level
 echo "➤ Checking out .org repository..."
-svn checkout --depth immediates "$SVN_URL" "$SVN_DIR"
+# svn checkout --depth immediates "$SVN_URL" "$SVN_DIR"
 cd "$SVN_DIR"
-svn update --set-depth infinity assets
-svn update --set-depth infinity trunk
+# svn update --set-depth infinity assets
+# svn update --set-depth infinity trunk
 
 echo "➤ Copying files..."
 # Copy from current branch to /trunk, excluding dotorg assets
@@ -78,19 +78,19 @@ fi
 # The force flag ensures we recurse into subdirectories even if they are already added
 # Suppress stdout in favor of svn status later for readability
 echo "➤ Preparing files..."
-svn add . --force > /dev/null
+# svn add . --force > /dev/null
 
 # SVN delete all deleted files
 # Also suppress stdout here
-svn status | grep '^\!' | sed 's/! *//' | xargs -I% svn rm %@ > /dev/null
+# svn status | grep '^\!' | sed 's/! *//' | xargs -I% svn rm %@ > /dev/null
 
 # Copy tag locally to make this a single commit
 echo "➤ Copying tag..."
-svn cp "trunk" "tags/$VERSION"
+# svn cp "trunk" "tags/$VERSION"
 
-svn status
+# svn status
 
 echo "➤ Committing files..."
-svn commit -m "Update to version $VERSION from GitHub" --no-auth-cache --non-interactive  --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
+# svn commit -m "Update to version $VERSION from GitHub" --no-auth-cache --non-interactive  --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
 
 echo "✓ Plugin deployed!"
