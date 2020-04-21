@@ -1,4 +1,4 @@
-name: 'WordPress Plugin Deploy'
+name: 'WordPress Plugin SVN Deploy'
 description: 'Deploy to the WordPress Plugin Repository'
 author: 'nK'
 runs:

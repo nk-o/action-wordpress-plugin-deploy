@@ -1,4 +1,4 @@
-# WordPress.org Plugin Deploy
+# WordPress Plugin SVN Deploy
 
 This Action commits the contents of your Git tag to the WordPress.org plugin repository using the same tag name. It can exclude files as defined in `.distignore`, and moves anything from a `.wordpress-org` subdirectory to the top-level `assets` directory in Subversion (plugin banners, icons, and screenshots).
 
