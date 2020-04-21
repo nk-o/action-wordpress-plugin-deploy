@@ -71,7 +71,7 @@ fi
 if [[ -d "$GITHUB_WORKSPACE/$ASSETS_DIR/" ]]; then
     rsync -rc "$GITHUB_WORKSPACE/$ASSETS_DIR/" assets/ --delete
 else
-    echo "ℹ︎ No assets directory found; skipping asset copy"
+    echo "ℹ︎ No assets directory found; skipping..."
 fi
 
 # Add everything and commit to SVN
