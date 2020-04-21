@@ -6,4 +6,5 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+
+ENTRYPOINT ["sh", "/entrypoint.sh"]
