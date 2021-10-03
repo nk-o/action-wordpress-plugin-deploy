@@ -51,7 +51,7 @@ else
 fi
 
 SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
-SVN_DIR="/github/svn-${SLUG}"
+SVN_DIR="${HOME}/svn-${SLUG}"
 
 # Checkout just trunk and assets for efficiency
 # Tagging will be handled on the SVN level
